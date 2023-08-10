@@ -1,1 +1,18 @@
+pip install pytesseract
+import pytesseract
+from PIL import Image
+
+# Chemin vers l'exécutable Tesseract (si nécessaire)
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+# Charger l'image à partir de laquelle vous souhaitez extraire le texte
+image_path = 'chemin_vers_l_image.png'
+img = Image.open(image_path)
+
+# Utiliser Tesseract pour extraire le texte
+extracted_text = pytesseract.image_to_string(img)
+
+# Afficher le texte extrait
+print(extracted_text)
+
 
